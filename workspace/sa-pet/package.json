@@ -1,0 +1,10 @@
+{
+  "name": "fast-strategy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "train_record":"python scripts/build_tfrecord.py -x images/pet/train -l annotations/pet_map_v0.pbtxt -o annotations/train.record",
+    "test_record":"python scripts/build_tfrecord.py -x images/pet/test -l annotations/pet_map_v0.pbtxt -o annotations/test.record"
+  }
+}

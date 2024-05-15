@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>8361715405971_.pic_hd.jpg</filename>
+	<path>/Users/boboan/code/learn/py/fast-strategy/images/pet/train/8361715405971_.pic_hd.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2480</width>
+		<height>1116</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>葛雷吉鲁</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1373</xmin>
+			<ymin>483</ymin>
+			<xmax>1521</xmax>
+			<ymax>714</ymax>
+		</bndbox>
+	</object>
+</annotation>
