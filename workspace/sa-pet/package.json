@@ -4,7 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "train_record":"python scripts/build_tfrecord.py -x images/pet/train -l annotations/pet_map_v0.pbtxt -o annotations/train.record",
-    "test_record":"python scripts/build_tfrecord.py -x images/pet/test -l annotations/pet_map_v0.pbtxt -o annotations/test.record"
+    "train_record": "python scripts/build_tfrecord.py -x images/pet/train -l annotations/pet_map_v0.pbtxt -o annotations/train.record",
+    "test_record": "python scripts/build_tfrecord.py -x images/pet/test -l annotations/pet_map_v0.pbtxt -o annotations/test.record",
+    "train": "python model_main_tf2.py --model_dir=models/ssd_sa --pipeline_config_path=models/ssd_sa/pipeline.config",
+    "export": "python exporter_main_v2.py --input_type image_tensor --pipeline_config_path models/ssd_sa/pipeline.config --trained_checkpoint_dir models/ssd_sa/ --output_directory exported-models/ssd_sa",
+    "convert:json": "tensorflowjs_converter --input_format=exported-models/ssd_sa/saved_model --output_node_names='ssd_sa' exported-models/ssd_sa/saved_model/saved_model.pb exported-models/ssd_sa/ssd_sa.json",
+    "build:convert":"docker build -t od-tf-convert -f convert.Dockerfile ."
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-converter": "^4.19.0"
   }
 }

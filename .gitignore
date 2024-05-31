@@ -1,2 +1,9 @@
 fast-strategy_env
-models
+/models
+node_modules
+tensorflow
+
+models/
+pre-trained-models/
+checkpoint/
+exported-models/
